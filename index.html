@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="fontawesome/css/fontawesome.css" rel="stylesheet" />
+  <link href="fontawesome/css/brands.css" rel="stylesheet" />
+  <link href="fontawesome/css/solid.css" rel="stylesheet" />
+  <style>
+  html, body, *{
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    position: relative;
+  }
+  
+body {
+  margin: 0;
+  background-color: #1b1b1b;
+  color: #fff;
+  position: relative;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  right: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  background: rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #ffff;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover,
+.navx.active  {
+  color: gold;
+  text-shadow: 0 0 5px gold;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#ham{
+    position: absolute;
+    right: 30px;
+    top: 15px;
+    opacity: 0;
+      animation: slideLeft 1s ease forwards;
+}
+
+#ham :active{
+    opacity: 0;
+}
+
+#main{
+  transition: margin-Right .5s;
+  background: #1c1c1c;
+    background-image: url(3.jpg);
+    height: 100vh;
+    margin: 0 0 0vh;
+    background-size: 100%;
+    background-position: 0 0;
+  background-attachment: fixed;
+  background-blend-mode: overlay;
+    animation: moveBG 60s linear infinite;
+    
+box-sizing: border-box;
+  position: relative;
+  overflow-y: auto;
+}
+
+.main-container {
+  height: 100%;
+  padding: 16px;
+  
+}
+  
+  #about {
+    height: 100vh;
+    position: relative;
+    z-index: 2;
+  }
+
+@keyframes moveBG {
+    from{
+        background-position: 0 0;
+    }
+    to{
+        background-position: -10000px 0;
+    }
+    
+}
+  
+  
+@keyframes moveBGII {
+    from{
+        background-position: 0 0;
+    }
+    to{
+        background-position: 10000px 0;
+    }
+    
+}
+  
+  #main h1{
+    font-size: 40px;
+    font-weight: 900;
+    opacity: 0;
+      animation: slideRight 1s ease forwards;
+  }
+  
+  #main p{
+    opacity: 0;
+    animation: slideRight 2s ease forwards;
+  }
+  
+  #main h2{
+    font-size: 25px;
+    opacity: 0;
+      animation: slideLeft 1s ease forwards;
+  }
+  
+  #main h2 span{
+    opacity: 0;
+    animation: slideLeft 2s ease forwards;
+  }
+
+.main-container{
+  position: relative;
+    transform: translateY(100px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  margin: 0 20px 0px;
+  max-height: 100%;
+}
+
+.main-text span{
+    color: gold;
+}
+
+.main-text{
+    flex-basis: 60%;
+    margin: 0 0px 0;
+}
+
+.main-img{
+    flex-basis: 40%;
+    margin: 0px 0px 0;
+}
+
+#main h1,
+#main h2,
+#main p{
+    padding: 0px;
+    margin: 5px;
+}
+  
+  #main p{
+    font-size: 15px;
+    max-width: 80%;
+  }
+
+#main img{
+  position: relative;
+  margin: 0;
+  padding: 0;
+    width: 100%;
+    opacity: 0;
+      animation: zoomIn 1.7s ease forwards, floatImage 5s ease-in-out infinite;
+    animation-delay: 1.5s, 3s;
+}
+
+header h1{
+    margin-left: 50px;
+    opacity: 0;
+      animation: slideRight 1s ease forwards;
+}
+
+#navbar, header {
+  background-color: #1b1b1b;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  display: block;
+  transition: top 0.5s;
+}
+
+nav{
+      display: flex;
+    position: absolute;
+    right: 70px;
+    top: 15px;
+    opacity: 0;
+      animation: slideLeft 1s ease forwards;
+
+    }
+
+#navbar a {
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  transition: .2s;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#navbar a:hover,
+#navbar .nav-link.active  {
+  background-color: gold;
+  color: #1c1c1c;
+  font-weight: 900;
+
+}
+  
+
+header {
+  transition: transform 0.5s ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 997;
+}
+
+header, #navbar{
+    width: 100vw;
+    margin: 0%;
+    padding: 0;
+}
+  
+  header  h1 span{
+    color: gold;
+  }
+ 
+  header{
+    font-size: 15px;
+    z-index: 979;
+    margin: 0;
+    padding: 0;
+  }
+
+  #ham{
+    display: none;
+  }
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+@media screen and (max-width: 768px) {
+    .main-container{
+        flex-direction: column;
+    }
+
+  
+
+
+    nav{
+      display: none;
+    }
+
+    #ham{
+      display: block;
+    }
+
+    .main-text{
+      margin:  0;
+        flex-basis: 100%;
+    }
+
+    .main-img{
+      margin: 0px 0 0;
+        flex-basis: 100%;
+    }
+  
+}
+  
+  .main-text{
+    margin-bottom: -150px;
+  }
+  
+  .btn{
+    color: #111822;
+    font-weight: 900;
+    background: gold;
+    float: left;
+    padding: 5px 15px 5px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px gold;
+    margin: 10px 5px 10px;
+    opacity: 0;
+    transition: 0.7s ease-in-out;
+    animation: slideRight 1s ease forwards, floatImageII 2s ease-in-out infinite;
+    animation-delay: 1s, 2s;
+    cursor: pointer;
+  }
+  
+  .btn:hover{
+    background: white;
+    box-shadow: 0 0px 15px white;
+    font-size: 17px;
+    border-radius: 0px;
+  }
+  
+  .about-container{
+    z-index: 20;
+    backdrop-filter: blur(5px) brightness(.4);
+  }
+  
+  #about {
+  transition: margin-Left .5s;
+  height: 100%;
+  background: #1f1f1f;
+    background-image: url(about.png);
+    margin: 20px 0 0vh;
+    background-size: contain;
+    background-position: 0 0;
+  background-attachment: fixed;
+    animation: moveBGII 100s linear infinite;
+  z-index: 200;
+    display:flex;
+    flex-direction: column;
+    margin: 10px 0 10px;
+}
+  
+  
+  .about-img img{
+    
+    border-radius: 20px;
+  }
+  
+  header{
+    margin: 0;
+  }
+  
+  
+  /* KEYFRAMES ANIMATION */
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideTop {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideBottom {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes floatImage {
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-30px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+  
+  
+@keyframes pump {
+    0%{
+        transform: scale(1);
+        transform: translateY(0);
+    }
+    50%{
+        transform: scale(0.95);
+        
+    }
+    100%{
+        transform: scale(1);
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes floatImageII {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+@keyframes bounce {
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-24px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+  
+  
+.hidden {
+  transform: translateY(-100%);
+  transition: transform 0.5s ease-in-out;
+}
+
+  
+.about-container {
+  align-items: center;
+}
+
+.about-img{
+    padding-right: 15px;
+    border-radius: 15%;
+    
+}
+  
+  #about{
+align-items: stretch;
+height: 100vh;
+    width:100%
+    display: flex;
+    flex-direction: column;
+  }
+
+
+.about-container {
+  align-self: center;
+  justify self: center;
+  padding: 20px;
+  margin: 0 0px 0px;
+  width: 100vw;
+    font-size: 16px;
+    text-align: justify;
+    opacity: 0%;
+    animation: slideRight 3s ease forwards;
+     animation-delay: 1s;
+    animation-timeline: auto();
+    animation-range: entry;
+}
+  
+  .about-text h1{
+    font-size: 30px;
+    margin: 0 0 -10px;
+    font-weight: 900;
+    color: gold;
+  }
+  
+  #main, #about{
+    overflow-y: auto;
+  
+  }
+
+  #about img{
+    float: left;
+    margin: auto;
+    margin-right: 10px;
+    filter: saturate(.25) contrast(1.07);
+      
+  }
+  
+  .about-container .btn{
+    margin: -5px 5px 0px;
+    float: right;
+    border-radius: 6px;
+  }
+  
+ 
+
+  .about-text{
+    padding: 0 0px 20px;
+    
+  }
+  
+  #main, .main-container{
+    marigin-bottom: -300px;
+  }
+  
+  .about-container {
+    justify-content: center; /* Center vertically */
+    height: 100%; /* Ensure the container takes the full height */
+    padding: 20px;
+    text-align: justify;
+}
+  
+  .center{
+  margin: 0 20px 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  }
+  
+.about-img img {
+  
+  max-width: 150px;
+    filter: saturate(.25) contrast(1.07);
+    opacity: ;
+    animation:  pump 5s ease-in-out infinite;
+    animation-delay:  5s;
+    margin: ;
+}
+
+  
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.loader__circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #fff;
+  margin: 30px;
+  animation: pulse 1.5s infinite;
+}
+  
+  .loader__circle:nth-child(1){
+    animation-delay: 0s;
+  }
+  .loader__circle:nth-child(2){
+    animation-delay: 0.2s;
+  }
+  .loader__circle:nth-child(3){
+    animation-delay: 0.5s;
+  }
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+    background-color: gold;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+  
+  
+.loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  z-index: 9589; /* Add a high z-index to bring it to the front */
+}
+  
+  
+.loader {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9559;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.fadeOut {
+  opacity: 0;
+}
+  
+  header{
+    cusor: pointer;
+  }
+  
+  header h1 span{
+    color: gold;
+    font-weight: 500;
+  }
+
+  .about-container{
+    margin:0 0px 0;
+    padding: 0;
+  }
+  
+  #skills{
+    height: 100vh;
+  }
+  
+.skills {
+  background-color: ;
+  padding: 20px;
+}
+
+.skills h2 {
+  color: gold;
+  font-weight: 900;
+  font-size: 40px;
+  text-align: center;
+}
+
+.skills ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skills li {
+  margin-bottom: 20px;
+}
+
+.skills meter {
+  width: 100%;
+  border: none;
+  border-radius: 50px;
+  height: 20px;
+  margin: 0;
+}
+
+meter::-webkit-meter-optimum-value{
+  border: none;
+  background: gold;
+  box-shadow: 0 20px 20px 1000px black;
+}
+  
+  @keyframes fill-meter {
+0% {
+width: 0;
+}
+100% {
+width: attr(value);
+}
+}
+
+.skills meter {
+animation: fill-meter 2s ease-in-out;
+    animation-delay: 1s;
+    animation-timeline: scroll();
+    animation-range: entry;
+}
+  
+  
+  
+</style>
+</head>
+<body>
+
+<header id="navbar">
+    <h1>GIFTED<span>07</span></h1>
+    <section id="ham">
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+    </section>
+
+<nav id="navmenu" class="nav">
+
+  <a href="#main" class="nav-link active"><i class="fas fa-house"></i> Home</a>
+  <a href="#about" class="nav-link "><i class="fa-solid fa-user"></i> About</a>
+  <a href="#skills" class="nav-link "><i class="fa-solid fa-list-check"> </i> Skills</a>
+  <a href="#contact" class="nav-link ">Contact</a>
+
+</nav>
+</header>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+  <a href="#main" class="navx active"><i class="fa-solid fa-house"> </i> Home</a>
+  <a href="#about" class="navx"><i class="fa-solid fa-user"> </i> About</a>
+  <a href="#skills" class="navx"><i class="fa-solid fa-list-check"> </i> Skills</a>
+  <a href="#contact" class="navx">Contact</a>
+
+</div>
+  
+  
+<div class="loader">
+  <div class="loader__circle"></div>
+  <div class="loader__circle"></div>
+  <div class="loader__circle"></div>
+</div>
+
+<section id="web-content">
+<section id="main">
+    <div class="main-container">
+        <div class="main-text">
+            <h2>Hello, I am</h2>
+            <h1>IBIAM IHEANYI</h1>
+            <h2><span class="multiple-text"></span></h2>
+            <p>Looking for someone who is extremely creative, multi-talented, committed, a problem solver, and overall good-looking ;-), 
+              then you have come to the right place.</p>
+        
+          <!--<div class="btn">Dowload CV</div>-->
+        <div class="btn"><i class="fa-solid fa-user-tie"> </i> HIRE ME!</div>
+        </div>
+        <div class="main-img"><img src="main.png"></div>
+        
+    </div>
+
+</div>
+</section>
+
+
+<section id="about">
+    <div class="about-container">
+      <div class="center">
+        <div class="about-img"><img src="aboutme.png" style="width: 50vw;"></div>
+    
+        <div class="about-text">
+            <h1>ABOUT ME</h1>
+            <h1></h1>
+            
+            <p>
+              "Welcome to my world of creativity! I'm Iheanyi Ibiam, a visionary digital creative 
+              with a passion for innovation and a thirst for excellence. With a versatile skill set that 
+              seamlessly blends technology, photography, animation, design, art, illustration, video
+              editing, writing, UI/UX, frontend development, poetry, and photo manipulation, I'm a
+              true master of my craft. My unique blend of skills and expertise enables me to approach
+              projects from multiple angles, delivering innovative solutions that exceed expectations. 
+              Whether it's crafting stunning visuals, developing user-friendly interfaces, or writing 
+              compelling stories, I bring a fresh perspective and unwavering dedication to every project
+              I take on. Let's collaborate and create something amazing together!"
+              </p>
+        
+          <a href="resume.pdf" download="resume.pdf">
+   <div class="btn"><i class="fas fa-download"></i> Download CV</div>
+          </a>
+        </div>
+    </div>
+    </div>
+</div>
+</section>
+
+
+<section id="skills">
+  <div class="skills">
+  <h2>SKILLS</h2>
+  <ul>
+    <li>
+      <h3>Skill 1</h3>
+      <p>Description of skill 1</p>
+      <meter value="0.8">80%</meter>
+    </li>
+    <li>
+      <h3>Skill 2</h3>
+      <p>Description of skill 2</p>
+      <meter value="0.5">50%</meter>
+    </li>
+    <li>
+      <h3>Skill 3</h3>
+      <p>Description of skill 3</p>
+      <meter value="0.9">90%</meter>
+    </li>
+  </ul>
+  </div>
+</section>
+
+
+
+
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginRight = "0px";
+  document.body.style.backgroundColor = "#1c1c1c";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginRight= "0";
+  document.body.style.backgroundColor = "#1b1b1b";
+}
+
+
+
+var typed = new Typed(".multiple-text", {
+    strings: ["Graphic Designer", "Web Developer", "Photo Editor", "Artist",  "Digital Marketer", "Writer", "Photographer", "Animator", "UI/UX Designer", "Video Editor", "Social Media Manager", "Content Creator"],
+    typeSpeed: 100,
+    backSpeed: 100,
+    backDelay: 1000,
+    loop: true
+})
+
+document.addEventListener('DOMContentLoaded', () => {
+    const links = document.querySelectorAll('.nav-link');
+
+    links.forEach(link => {
+        link.addEventListener('click', function() {
+            links.forEach(link => link.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const links = document.querySelectorAll('.navx');
+
+    links.forEach(link => {
+        link.addEventListener('click', function() {
+            links.forEach(link => link.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+});
+
+
+
+
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("navbar").style.top = "0";
+  } else {
+    document.getElementById("navbar").style.top = "-50px";
+  }
+  prevScrollpos = currentScrollPos;
+}
+
+
+
+</script>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginRight = "0px";
+  document.body.style.backgroundColor = "#1c1c1c";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginRight = "0";
+  document.body.style.backgroundColor = "#1b1b1b";
+}
+
+var typed = new Typed(".multiple-text", {
+  strings: ["AI Measurements", "Design Studio", "Online Store", "Social Network", "Fashion Hub", "And Lots More..."],
+  typeSpeed: 100,
+  backSpeed: 100,
+  backDelay: 1000,
+  loop: true
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const links = document.querySelectorAll('.nav-link');
+  const sections = document.querySelectorAll('section[id]');
+
+  // Intersection Observer
+  const options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.5 // Adjust as needed
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        links.forEach(link => link.classList.remove('active'));
+        document.querySelector(`.nav-link[href="#${entry.target.id}"]`).classList.add('active');
+      }
+    });
+  }, options);
+
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+
+
+  const mobileLinks = document.querySelectorAll('.navx');
+  const mobileObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        mobileLinks.forEach(link => link.classList.remove('active'));
+        document.querySelector(`.navx[href="#${entry.target.id}"]`).classList.add('active');
+      }
+    });
+  }, options);
+
+  sections.forEach(section => {
+    mobileObserver.observe(section);
+  });
+});
+
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("navbar").style.top = "0";
+  } else {
+    document.getElementById("navbar").style.top = "-100px";
+  }
+  prevScrollpos = currentScrollPos;
+};
+
+
+const loader = document.getElementById('loader');
+loader.style.display = 'block';
+window.addEventListener('load', () => {
+  loader.style.display = 'none';
+  loader.classList.add('fadeOut');
+});
+loader.addEventListener('transitionend', () => {
+  loader.style.display = 'none';
+});
+</script>
+
+   
+</body>
+
+</html> 
